@@ -176,27 +176,68 @@ public class GUI {
         // PAYROLL BUTTON
         payrollButton.addActionListener(
                 new ActionListener() {
-
+        
             public void actionPerformed(ActionEvent e) {
-
+        
                 try {
-
+        
+                    // ALLOWANCES
+                    double riceSubsidy = 1500;
+                    double phoneAllowance = 1000;
+                    double clothingAllowance = 1000;
+        
+                    // OVERTIME PAY
+                    double overtimePay =
+                            attendance.calculateOvertimepay();
+        
+                    // BASIC PAYROLL
                     double gross =
                             payroll.calculateGrossSalary();
-
+        
                     double net =
                             payroll.calculateNetSalary();
-
+        
+                    // UPDATED TOTALS
+                    double totalGross =
+                            gross
+                            + riceSubsidy
+                            + phoneAllowance
+                            + clothingAllowance
+                            + overtimePay;
+        
+                    double totalNet =
+                            net
+                            + riceSubsidy
+                            + phoneAllowance
+                            + clothingAllowance
+                            + overtimePay;
+        
                     outputArea.setText(
                             "===== PAYROLL =====\n"
-                            + "Gross Salary: "
-                            + gross
+                            + "Basic Salary: "
+                            + employee.getBasicSalary()
+        
+                            + "\nRice Subsidy: "
+                            + riceSubsidy
+        
+                            + "\nPhone Allowance: "
+                            + phoneAllowance
+        
+                            + "\nClothing Allowance: "
+                            + clothingAllowance
+        
+                            + "\nOvertime Pay: "
+                            + overtimePay
+        
+                            + "\n\nGross Salary: "
+                            + totalGross
+        
                             + "\nNet Salary: "
-                            + net
+                            + totalNet
                     );
-
+        
                 } catch (Exception ex) {
-
+        
                     JOptionPane.showMessageDialog(
                             frame,
                             "Payroll Error!",
