@@ -10,7 +10,7 @@ public class GUI {
 
     public static void main(String[] args) {
 
-        // LOGIN PANEL
+        // LOGIN 
         JTextField usernameField = new JTextField(15);
         JPasswordField passwordField = new JPasswordField(15);
 
@@ -58,7 +58,7 @@ public class GUI {
             System.exit(0);
         }
 
-        // CREATE FRAME
+        // FRAME
         JFrame frame =
                 new JFrame("MotorPH Employee App");
 
@@ -197,7 +197,7 @@ public class GUI {
                     double net =
                             payroll.calculateNetSalary();
         
-                    // UPDATED TOTALS
+                    // TOTALS
                     double totalGross =
                             gross
                             + riceSubsidy
