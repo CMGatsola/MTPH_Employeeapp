@@ -30,7 +30,7 @@ public class Payroll {
                 + employee.getRiceSubsidy()
                 + employee.getPhoneAllowance()
                 + employee.getClothingAllowance()
-                + attendance.calculateOvertime();
+                + attendance.calculateOvertimepay();
 
         return grossSalary;
     }
@@ -49,7 +49,7 @@ public class Payroll {
 
     System.out.println("===== PAYROLL =====");
 
-    double overtimePay = attendance.calculateOvertime();
+    double overtimePay = attendance.calculateOvertimepay();
 
     double gross = calculateGrossSalary();
     double net = calculateNetSalary();
