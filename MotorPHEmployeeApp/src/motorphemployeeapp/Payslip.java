@@ -30,7 +30,7 @@ public class Payslip {
                 + employee.getRiceSubsidy()
                 + employee.getPhoneAllowance()
                 + employee.getClothingAllowance()
-                + attendance.calculateOvertime();
+                + attendance.calculateOvertimepay();
 
         return grossSalary;
     }
