@@ -28,12 +28,12 @@ public class Attendance {
         return daysWorked * 8;
     }
 
-    public double calculateOvertime() {
+    public double calculateOvertimepay() {
 
         return overtimeHours * 200;
     }
 
-    public double getHoursRemaining() {
+    public double gethoursRemaining() {
 
         return hoursRemaining;
     }
