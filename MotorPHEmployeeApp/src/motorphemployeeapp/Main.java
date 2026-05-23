@@ -83,15 +83,12 @@ public class Main {
                                     + attendance.calculateOvertime());
                             
                             System.out.println("Overtime Hours: "
-                            + attendance.getOvertimeHours());
+        + attendance.getOvertimeHours());
                         }
                         
                         case 3 -> payroll.processPayroll();
                         
-                        case 4 -> {
-                            payslip.generatePayslip();
-                            payslip.printPayslip();
-                        }
+                        case 4 -> payslip.processPayslip();                       
                         
                         case 5 -> System.out.println("Logging out...");
                         
