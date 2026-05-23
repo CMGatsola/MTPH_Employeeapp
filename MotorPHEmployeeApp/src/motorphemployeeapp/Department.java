@@ -14,6 +14,6 @@ public class Department {
     private String departmentName;
 
     public void assignEmployee() {
-        System.out.println("Employee assigned to department.");
+        System.out.println("Department:");
     }
 }
