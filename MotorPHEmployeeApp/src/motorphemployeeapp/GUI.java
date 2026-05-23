@@ -35,7 +35,7 @@ public class GUI {
             String username = usernameField.getText();
             String password = new String(passwordField.getPassword());
 
-            // SIMPLE LOGIN
+            // SIMPLE LOGIN ex: 
             if (username.equals("Juan_10001")
                     && password.equals("12345")) {
 
