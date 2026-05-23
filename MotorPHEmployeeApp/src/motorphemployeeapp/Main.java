@@ -60,7 +60,7 @@ public class Main {
                     System.out.println("2. Attendance");
                     System.out.println("3. Payroll");
                     System.out.println("4. Payslip");
-                    System.out.println("5. Exit");
+                    System.out.println("5. Logout");
                     
                     System.out.print("Enter Choice: ");
                     
@@ -74,13 +74,13 @@ public class Main {
                             System.out.println("\n===== ATTENDANCE =====");
                             
                             System.out.println("Hours Remaing: " 
-                                    + attendance.getHoursRemaining());
+                                    + attendance.gethoursRemaining());
                             
                             System.out.println("Hours Worked: "
                                     + attendance.calculateHoursWorked());
                             
                             System.out.println("Overtime Pay: "
-                                    + attendance.calculateOvertime());
+                                    + attendance.calculateOvertimepay());
                             
                             System.out.println("Overtime Hours: "
                                     + attendance.getOvertimeHours());
