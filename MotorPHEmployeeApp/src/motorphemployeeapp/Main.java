@@ -83,7 +83,7 @@ public class Main {
                                     + attendance.calculateOvertime());
                             
                             System.out.println("Overtime Hours: "
-        + attendance.getOvertimeHours());
+                                    + attendance.getOvertimeHours());
                         }
                         
                         case 3 -> payroll.processPayroll();
