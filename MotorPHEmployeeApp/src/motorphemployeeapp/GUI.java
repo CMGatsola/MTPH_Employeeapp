@@ -1,21 +1,62 @@
 package motorphemployeeapp;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author cm
- */
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
 public class GUI {
 
+    private static boolean loggedIn = false;
+
     public static void main(String[] args) {
+
+        // LOGIN PANEL
+        JTextField usernameField = new JTextField(15);
+        JPasswordField passwordField = new JPasswordField(15);
+
+        JPanel loginPanel = new JPanel(new GridLayout(2, 2));
+
+        loginPanel.add(new JLabel("Username:"));
+        loginPanel.add(usernameField);
+
+        loginPanel.add(new JLabel("Password:"));
+        loginPanel.add(passwordField);
+
+        int result = JOptionPane.showConfirmDialog(
+                null,
+                loginPanel,
+                "MotorPH Login",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE
+        );
+
+        if (result == JOptionPane.OK_OPTION) {
+
+            String username = usernameField.getText();
+            String password = new String(passwordField.getPassword());
+
+            // SIMPLE LOGIN
+            if (username.equals("Juan_10001")
+                    && password.equals("12345")) {
+
+                loggedIn = true;
+
+            } else {
+
+                JOptionPane.showMessageDialog(
+                        null,
+                        "Invalid username or password!",
+                        "Login Failed",
+                        JOptionPane.ERROR_MESSAGE
+                );
+
+                System.exit(0);
+            }
+
+        } else {
+
+            System.exit(0);
+        }
 
         // CREATE FRAME
         JFrame frame =
@@ -38,8 +79,8 @@ public class GUI {
         JButton payslipButton =
                 new JButton("Payslip");
 
-        JButton clearButton =
-                new JButton("Clear");
+        JButton logoutButton =
+                new JButton("Logout");
 
         // TEXT AREA
         JTextArea outputArea =
@@ -59,7 +100,7 @@ public class GUI {
         frame.add(attendanceButton);
         frame.add(payrollButton);
         frame.add(payslipButton);
-        frame.add(clearButton);
+        frame.add(logoutButton);
 
         frame.add(scrollPane);
 
@@ -184,13 +225,32 @@ public class GUI {
             }
         });
 
-        // CLEAR BUTTON
-        clearButton.addActionListener(
+        // LOGOUT BUTTON
+        logoutButton.addActionListener(
                 new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
 
-                outputArea.setText("");
+                int confirm = JOptionPane.showConfirmDialog(
+                        frame,
+                        "Are you sure you want to logout?",
+                        "Logout",
+                        JOptionPane.YES_NO_OPTION
+                );
+
+                if (confirm == JOptionPane.YES_OPTION) {
+
+                    loggedIn = false;
+
+                    JOptionPane.showMessageDialog(
+                            frame,
+                            "Logged out successfully."
+                    );
+
+                    frame.dispose();
+
+                    main(null);
+                }
             }
         });
     }
